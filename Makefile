@@ -8,7 +8,7 @@ clean  :; forge clean
 # Remove modules
 remove :; rm -rf .gitmodules && rm -rf .git/modules/* && rm -rf lib && touch .gitmodules && git add . && git commit -m "modules"
 
-install :; forge install Openzeppelin/openzeppelin-contracts && forge install Rari-Capital/solmate && forge install foundry-rs/forge-std
+install :; forge install Openzeppelin/openzeppelin-contracts && forge install foundry-rs/forge-std
 
 # Update Dependencies
 update:; forge update
