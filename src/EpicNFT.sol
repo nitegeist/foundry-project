@@ -4,7 +4,7 @@ pragma solidity ^0.8.13;
 // We first import some OpenZeppelin Contracts.
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
-import "forge-std/console.sol";
+import "@std/console.sol";
 
 // We inherit the contract we imported. This means we'll have access
 // to the inherited contract's methods.
@@ -24,11 +24,7 @@ contract EpicNFT is ERC721URIStorage {
         _safeMint(msg.sender, newItemId);
         // Set the NFTs data.
         _setTokenURI(newItemId, "https://jsonkeeper.com/b/5P7T");
-        console.log(
-            "An NFT has been minted",
-            newItemId,
-            msg.sender
-        );
+        console.log("An NFT has been minted", newItemId, msg.sender);
         // Increment the counter for when the next NFT is minted.
         _tokenIds.increment();
     }
