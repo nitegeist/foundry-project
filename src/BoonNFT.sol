@@ -8,16 +8,16 @@ import "@std/console.sol";
 
 // We inherit the contract we imported. This means we'll have access
 // to the inherited contract's methods.
-contract EpicNFT is ERC721URIStorage {
+contract BoonNFT is ERC721URIStorage {
     // Magic given to us by OpenZeppelin to help us keep track of tokenIds.
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
     // We need to pass the name of our NFTs token and its symbol.
-    constructor() ERC721("SquareNFT", "SQUARE") {}
+    constructor() ERC721("BoonNFT", "BOON") {}
 
     // A function our user will hit to get their NFT.
-    function makeEpicNFT() public {
+    function makeBoonNFT() public {
         // Get the current tokenId, this starts at 0.
         uint256 newItemId = _tokenIds.current();
         // Actually mint the NFT to the sender using msg.sender.

@@ -2,18 +2,18 @@
 pragma solidity ^0.8.13;
 
 import "forge-std/Test.sol";
-import "src/EpicNFT.sol";
+import "src/BoonNFT.sol";
 
 contract ERC721Test is Test {
-    EpicNFT nft;
-    address jeff = address(0x1);
+    BoonNFT internal nft;
+    address internal jeff = address(0x1);
 
     function testMintToken() public {
-        nft = new EpicNFT();
+        nft = new BoonNFT();
         vm.startPrank(jeff);
-        nft.makeEpicNFT();
+        nft.makeBoonNFT();
         vm.stopPrank();
-        address owner_of = nft.ownerOf(0);
-        assertEq(jeff, owner_of);
+        address ownerOf = nft.ownerOf(0);
+        assertEq(jeff, ownerOf);
     }
 }
